@@ -10,13 +10,18 @@ return require('packer').startup(function(use)
     }
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
+    -- Colorschemes
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'gruvbox-community/gruvbox'
+    use 'folke/tokyonight.nvim'
+    use 'joshdick/onedark.vim'
 
-    use({
-        'folke/tokyonight.nvim',
-        config = function()
-            vim.cmd('colorscheme tokyonight')
-        end
-    })
+
+    -- Statusline
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use('nvim-treesitter/playground')
@@ -49,8 +54,7 @@ return require('packer').startup(function(use)
         }
     }
 
-    use("folke/zen-mode.nvim")
-    use("github/copilot.vim")
+    use { "zbirenbaum/copilot.lua" }
 
     use {
         "nvim-neo-tree/neo-tree.nvim",
@@ -69,5 +73,25 @@ return require('packer').startup(function(use)
     use "terrortylor/nvim-comment"
     use "JoosepAlviste/nvim-ts-context-commentstring"
 
+
+    use "xiyaowong/nvim-transparent"
+
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("todo-comments").setup {}
+        end
+    }
+
+    use 'rcarriga/nvim-notify'
+
+    use({
+        "lalitmee/browse.nvim",
+        requires = { "nvim-telescope/telescope.nvim" },
+    })
+
+
+    use { 'stevearc/dressing.nvim' }
 
 end)
