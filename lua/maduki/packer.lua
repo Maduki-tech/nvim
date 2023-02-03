@@ -1,5 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
+
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
@@ -27,7 +28,10 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
+
     use('tpope/vim-fugitive')
+    use { "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } }
+
 
     use {
         'VonHeikemen/lsp-zero.nvim',
