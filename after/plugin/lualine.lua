@@ -33,7 +33,7 @@ require('lualine').setup {
         lualine_b = {},
         lualine_c = { { 'filename',
             file_status = true,
-            path = 1
+            path = 1 
         } },
         lualine_x = { 'location' },
         lualine_y = {},
