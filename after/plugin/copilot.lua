@@ -16,7 +16,7 @@ copilot.setup {
         auto_trigger = true,
         debounce = 75,
         keymap = {
-            accept = "<Tab>",
+            accept = "<S-Tab>",
         },
     },
     ft_disable = { "markdown" },

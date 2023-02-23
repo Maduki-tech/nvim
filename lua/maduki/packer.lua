@@ -96,5 +96,21 @@ return require('packer').startup(function(use)
 
 
     use { 'stevearc/dressing.nvim' }
+    use { 'ggandor/leap.nvim' }
 
+    -- useless plugins
+    use({
+        "giusgad/pets.nvim",
+        requires = {
+            "edluffy/hologram.nvim",
+            "MunifTanjim/nui.nvim",
+        }
+    })
+    use {
+        "danymat/neogen",
+        config = function()
+            require('neogen').setup {}
+        end,
+        requires = "nvim-treesitter/nvim-treesitter",
+    }
 end)
