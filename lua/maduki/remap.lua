@@ -23,7 +23,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 
 vim.keymap.set("n", "Q", vim.cmd.x)
-vim.keymap.set("n", "<leader>tf", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>tf", "<cmd>Neoformat <CR>")
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -37,9 +37,8 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/mad
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- Basic window Movement
-vim.keymap.set("n", "<leader>d", "<cmd>:vsplit <CR>", {noremap = true, silent = true})
-vim.keymap.set("n", "<leader>h", "<cmd>:wincmd h <CR>", {noremap = true, silent = true})
-vim.keymap.set("n", "<leader>j", "<cmd>:wincmd j <CR>", {noremap = true, silent = true})
-vim.keymap.set("n", "<leader>k", "<cmd>:wincmd k <CR>", {noremap = true, silent = true})
-vim.keymap.set("n", "<leader>l", "<cmd>:wincmd l <CR>", {noremap = true, silent = true})
-
+vim.keymap.set("n", "<leader>d", "<cmd>:vsplit <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>h", "<cmd>:wincmd h <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>j", "<cmd>:wincmd j <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>k", "<cmd>:wincmd k <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>l", "<cmd>:wincmd l <CR>", { noremap = true, silent = true })

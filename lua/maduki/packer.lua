@@ -43,6 +43,8 @@ return require('packer').startup(function(use)
             { 'neovim/nvim-lspconfig' },
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
+            {'MunifTanjim/prettier.nvim'},
+
 
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
@@ -72,6 +74,7 @@ return require('packer').startup(function(use)
         },
     }
     use("eandrju/cellular-automaton.nvim")
+    use ('sbdchd/neoformat')
     -- COMMENTS
     use "terrortylor/nvim-comment"
     use "JoosepAlviste/nvim-ts-context-commentstring"
