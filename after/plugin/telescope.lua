@@ -12,7 +12,8 @@ telescope.setup {
         color_devicons = true,
         file_ignore_patterns = {
             "node_modules",
-            ".git"
+            ".git",
+            "lib",
         },
         mappings = {
             i = {

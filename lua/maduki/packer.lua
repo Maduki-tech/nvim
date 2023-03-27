@@ -116,4 +116,6 @@ return require('packer').startup(function(use)
         end,
         requires = "nvim-treesitter/nvim-treesitter",
     }
+    -- C++ shit
+    use {"Shatur/neovim-cmake"}
 end)
