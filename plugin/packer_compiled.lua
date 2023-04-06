@@ -195,6 +195,11 @@ _G.packer_plugins = {
     path = "/Users/davidschluter/.local/share/nvim/site/pack/packer/start/neogen",
     url = "https://github.com/danymat/neogen"
   },
+  ["neovim-cmake"] = {
+    loaded = true,
+    path = "/Users/davidschluter/.local/share/nvim/site/pack/packer/start/neovim-cmake",
+    url = "https://github.com/Shatur/neovim-cmake"
+  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/Users/davidschluter/.local/share/nvim/site/pack/packer/start/nui.nvim",

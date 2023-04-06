@@ -15,12 +15,10 @@ vim.keymap.set("", "<C-b>", vim.cmd.NeoTreeFocusToggle)
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
-
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "Q", vim.cmd.x)
 vim.keymap.set("n", "<leader>tf", "<cmd>Neoformat <CR>")
@@ -32,23 +30,29 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/maduki/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/maduki/packer.lua<CR>")
+vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- Basic window Movement
-vim.keymap.set("n", "<leader>d", "<cmd>:vsplit <CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>h", "<cmd>:wincmd h <CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>j", "<cmd>:wincmd j <CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>k", "<cmd>:wincmd k <CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>l", "<cmd>:wincmd l <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>d", "<cmd>:vsplit <CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>h", "<cmd>:wincmd h <CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>j", "<cmd>:wincmd j <CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>k", "<cmd>:wincmd k <CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>l", "<cmd>:wincmd l <CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>te", vim.cmd.TransparentToggle, {noremap = true, silent = true})
 
-
--- Run in Nvim 
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-vim.keymap.set("n", "<leader>xp", "<cmd>!python3 main.py<CR>", { silent = true })
+-- Run in Nvim
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
+vim.keymap.set("n", "<leader>xp", "<cmd>!python3 main.py<CR>", {silent = true})
 -- RUN without lib
-vim.keymap.set("n", "<leader>xc", "<cmd>!g++ -o out main.cpp && ./out<CR>", { silent = true })
+vim.keymap.set("n", "<leader>xr", "<cmd>!cargo run<CR>", {silent = true})
 
-vim.keymap.set("n", "<leader>xb", "<cmd>:CMake build_and_run<CR>", { silent = true })
-vim.keymap.set("n", "<leader>xs", "<cmd>:CMake select_target<CR>", { silent = true })
+vim.keymap.set("n", "<leader>xc", "<cmd>!Cmake . && make && ./main<CR>", {silent = true})
+vim.keymap.set("n", "<leader>xb", "<cmd>!make && ./main<CR>", {silent = true})
+
+vim.g.neoformat_cpp_clangformat = {
+    exe = "clang-format",
+    args = {'--style="{IndentWidth: 4}"'}
+}
+vim.g.neoformat_enabled_cpp = {"clangformat"}
+vim.g.neoformat_enabled_c = {"clangformat"}
