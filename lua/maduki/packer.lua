@@ -33,6 +33,7 @@ return require("packer").startup(
 
         use("tpope/vim-fugitive")
         use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
+        use "mfussenegger/nvim-lint"
 
         use {
             "VonHeikemen/lsp-zero.nvim",
