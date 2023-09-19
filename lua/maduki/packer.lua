@@ -95,18 +95,7 @@ return require("packer").startup(
         )
 
         use {"stevearc/dressing.nvim"}
-        use {"ggandor/leap.nvim"}
 
-        -- useless plugins
-        use(
-            {
-                "giusgad/pets.nvim",
-                requires = {
-                    "edluffy/hologram.nvim",
-                    "MunifTanjim/nui.nvim"
-                }
-            }
-        )
         use {
             "danymat/neogen",
             config = function()
@@ -114,7 +103,77 @@ return require("packer").startup(
             end,
             requires = "nvim-treesitter/nvim-treesitter"
         }
+
+        use {"windwp/nvim-ts-autotag"}
         -- C++ shit
         use {"Shatur/neovim-cmake"}
+
+        -- Dashboard
+        use {
+            "glepnir/dashboard-nvim",
+            event = "VimEnter",
+            config = function()
+                require("dashboard").setup {
+                    theme = "hyper",
+                    config = {
+                        week_header = {
+                            enable = true
+                        },
+                        shortcut = {
+                            {desc = " Update", group = "@property", action = "Lazy update", key = "u"},
+                            {
+                                icon = " ",
+                                icon_hl = "@variable",
+                                desc = "Files",
+                                group = "Label",
+                                action = "Telescope find_files",
+                                key = "f"
+                            },
+                            {
+                                desc = " Apps",
+                                group = "DiagnosticHint",
+                                action = "Telescope app",
+                                key = "a"
+                            },
+                            {
+                                desc = " dotfiles",
+                                group = "Number",
+                                action = "Telescope dotfiles",
+                                key = "d"
+                            }
+                        }
+                    }
+                }
+            end,
+            requires = {"nvim-tree/nvim-web-devicons"}
+        }
+        use(
+            {
+                "kylechui/nvim-surround",
+                tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+                config = function()
+                    require("nvim-surround").setup({})
+                end
+            }
+        )
+        use "wakatime/vim-wakatime"
+        use {
+            "themaxmarchuk/tailwindcss-colors.nvim",
+            -- load only on require("tailwindcss-colors")
+            module = "tailwindcss-colors",
+            -- run the setup function after plugin is loaded
+            config = function()
+                -- pass config options here (or nothing to use defaults)
+                require("tailwindcss-colors").setup()
+            end
+        }
+
+        use "mfussenegger/nvim-jdtls"
+
+        -- PlantUML
+        use {
+            "https://gitlab.com/itaranto/plantuml.nvim",
+            tag = "*",
+        }
     end
 )

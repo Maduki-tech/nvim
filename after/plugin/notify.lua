@@ -16,7 +16,6 @@ notify.setup {
     icons = {
         ERROR = icons.diagnostics.Error,
         WARN = icons.diagnostics.Warning,
-        INFO = icons.diagnostics.Information,
         DEBUG = icons.ui.Bug,
         TRACE = icons.ui.Pencil,
     },
@@ -28,6 +27,9 @@ vim.notify = function(msg, ...)
         return
     end
     if msg:match "method textDocument" then
+        return
+    end
+    if msg:match "tailwindcss" then
         return
     end
 
